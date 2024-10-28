@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+}
+
+.bg-blue {
+  background: #1670FF;
+}
+
+.headerWrapper .top-strip {
+  padding: 8px 0px;
+}
+
+.headerWrapper .top-strip p {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.headerWrapper .header {
+  width: 100%;
+  height: auto;
+  padding: 20px 0px;
+}
+
+.logoWrapper img {
+  width: 100%;
+}
+
+.headerWrapper .header .part2 .aisuggestion {
+  width: 130px;
+  height: 50px;
+  min-width: 130px;
+  color: #000 !important;
+  border: 3px solid #1670FF !important;
+  border-radius: 5px !important;
+  text-align: left;
+  /* sua */
+  justify-content: center !important;
+}
+
+.headerWrapper .header .part2 .aisuggestion .label {
+  font-size: 17px !important;
+  font-weight: 700;
+  text-transform: capitalize !important;
+  color: #1670FF !important;
+  line-height: 16px;
+  font-family: "Nunito", sans-serif;
+}
+
+.header .headerSearch {
+  width: 60%;
+  height: 50px;
+  background: #f3f4f7;
+  padding: 10px;
+  position: relative;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.header .headerSearch input {
+  background: transparent !important;
+  outline: none !important;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.8);
+  width: 95%;
+  height: 30px;
+  border: 0px !important;
+  padding: 0px 20px !important;
+}
+.header .headerSearch input::-webkit-input-placeholder{
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.header .headerSearch button {
+  position: absolute;
+  top: 4px;
+  right: 15px;
+  z-index: 100;
+  min-width: 40px !important;
+  height: 40px !important;
+  width: 40px !important;
+  border-radius: 50% !important;
+  color: #000;
+}
+
+.header .headerSearch button svg {
+  font-size: 20px;
+}
+
+
+.header .part3 .circle {
+  align-items: center;
+  justify-content: center;
+  min-width: 45px !important;
+  height: 45px !important;
+  width: 45px !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  color: #000;
+}
+
+.header .part3 .circle svg {
+  font-size: 22px;
+}
+
+.cartTab .price {
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 700;
+}
+
+.cartTab button {
+  background: #fff1ee !important;
+}
+
+.cartTab button svg {
+  color: #ea2b0f !important;
+}
+
+.cartTab .count {
+  background: #ea2b0f;
+  border-radius: 50%;
+  color: #fff;
+  height: 20px;
+  position: absolute;
+  right: -4px;
+  top: -6px;
+  width: 20px;
+}
