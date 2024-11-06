@@ -1,13 +1,30 @@
 import Logo from '../../assets/images/logo.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import AISuggestion from '../AISuggestion';
 import { IoSearch } from "react-icons/io5";
 import { FiUser } from "react-icons/fi";
 import { IoBagOutline } from "react-icons/io5";
+import SearchBox from './SearchBox';
+import Navigation from './Navigation';
+import { IoIosMenu } from "react-icons/io";
+import { FaAngleDown } from "react-icons/fa";
+import { useContext } from 'react';
+import { MyContext } from '../../App';
 
 
 const Header = () => {
+
+    const context = useContext(MyContext);
+
+    const navigate = useNavigate();
+
+    const goToCart = () => {
+        navigate('/cart');
+    }
+
+
+
     return (
         <>
             <div className="headerWrapper">
@@ -17,7 +34,7 @@ const Header = () => {
                     </p>
                 </div>
 
-                <div className="header">
+                <header className="header">
                     <div className="container">
                         <div className="row">
                             <div className="logoWrapper d-flex align-items-center col-sm-2">
@@ -28,26 +45,35 @@ const Header = () => {
                                 <AISuggestion />
 
                                 {/* Header Search */}
-                                <div className='headerSearch ml-3 mr-3'>
-                                    <input type='text' placeholder='Tìm kiếm sản phẩm...' />
-                                    <Button><IoSearch /></Button>
-                                </div>
+                                <SearchBox />
 
                                 <div className='part3 d-flex align-items-center ml-auto'>
-                                    <Button className='circle mr-3'><FiUser /></Button>
-                                    <div className='ml-auto cartTab d-flex align-items-center'>
-                                        <span className='price'>100.000đ</span>
-                                        <div className='position-relative ml-2'>
-                                            <Button className='circle ml-2'><IoBagOutline /></Button>
-                                            <span className='count d-flex align-items-center justify-content-center'>1</span>
-                                        </div>
-                                    </div>
+                                    {
+                                        context.isLogin !== true ?
+                                            <Link to="/signIn">
+                                                <Button className="btn-blue btn-round mr-3">Đăng Nhập</Button>
+                                            </Link> :
+                                            <div>
+                                                <div className='ml-auto cartTab d-flex align-items-center'>
+                                                    <Button className='circle mr-3'><FiUser /></Button>
+                                                    <span className='price'>100.000đ</span>
+                                                    <div className='position-relative ml-2'>
+                                                        <Button className='circle ml-2' onClick={goToCart}><IoBagOutline /></Button>
+                                                        <span className='count d-flex align-items-center justify-content-center'>1</span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                    }
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                </div>
+                </header>
+
+                <Navigation />
 
             </div>
         </>
